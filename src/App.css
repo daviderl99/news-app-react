@@ -2,3 +2,8 @@
 .card {
   width: 40rem;
 }
+
+.card:hover {
+  cursor: pointer;
+  background-color: #eee;
+}

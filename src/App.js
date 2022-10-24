@@ -1,6 +1,8 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import axios from 'axios';
-import Form from './components/Form/Form';
+import Form from './components/Form';
+import EditNews from './pages/EditNews';
 import './App.css';
 
 class App extends React.Component {
@@ -53,14 +55,20 @@ class App extends React.Component {
         }
         {this.state.newsData.map((news, id) => (
           <div key={id}>
-            <div className="card m-3">
-              <div className="card-body">
-                <h3 className="card-title">{news.title}</h3>
-                <h5 className="card-subtitle mb-2 text-muted">{news.date}</h5>
-                <b className="card-text">{news.lead}</b>
-                <p className="card-text">{news.text}</p>
-              </div>
-            </div>
+            <BrowserRouter>
+              <Link to={`/edit/${id+1}`} className="card m-3">
+                <div className="card-body">
+                  <h3 className="card-title">{news.title}</h3>
+                  <h5 className="card-subtitle mb-2 text-muted">{news.date}</h5>
+                  <b className="card-text">{news.lead}</b>
+                  <p className="card-text">{news.text}</p>
+                </div>
+              </Link>
+              <Routes>
+                <Route path="edit/:id" element={<EditNews />} />
+                <Route path="news/" element={""}></Route>
+              </Routes>
+            </BrowserRouter>
           </div>
         ))}
       </div>
