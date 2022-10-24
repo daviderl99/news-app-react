@@ -2,7 +2,7 @@ import { React, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-function EditNews() {
+const EditNews = () => {
   const { id } = useParams();
 
   useEffect(() => {
