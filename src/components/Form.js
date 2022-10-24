@@ -3,7 +3,6 @@ import axios from 'axios';
 import './Form.css';
 
 export default class Form extends Component {
-
   state = {
     title: '',
     date: '',

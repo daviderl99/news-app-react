@@ -1,6 +1,6 @@
 import {Route, BrowserRouter, Routes} from 'react-router-dom';
-import ViewNews from './pages/ViewNews.jsx';
-import EditNews from './pages/EditNews.jsx';
+import ViewNews from './pages/ViewNews.js';
+import EditNews from './pages/EditNews.js';
 import './App.css';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" exact element={<ViewNews />} />
-            <Route path="/edit" exact element={<EditNews />} />
+            <Route path="/edit/:id" exact element={<EditNews />} />
           </Routes>
         </div>
       </div>

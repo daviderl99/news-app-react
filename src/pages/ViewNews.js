@@ -1,4 +1,4 @@
-import { React, useEffect, useState, useRef } from 'react';
+import { React, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Form from '../components/Form';
@@ -6,7 +6,7 @@ import '../css/ViewNews.css';
 
 const ViewNews = () => {
   const [newsData, setNewsData] = useState([]);
-  const showForm = useRef(false);;
+  const [showForm, setShowForm] = useState(false);
 
 	useEffect(() => {
 		let data;
@@ -25,8 +25,7 @@ const ViewNews = () => {
   }
 
   const toggleForm = () => {
-    showForm.current = !showForm.current;
-    console.log(showForm);
+    setShowForm(current => !current);
   }
 
   return(
