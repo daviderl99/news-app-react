@@ -18,7 +18,6 @@ const EditNews = () => {
 		.then(res => {
 			data = res.data;
 			setNewsData(data);
-      console.log(data.title)
 		})
 		.catch(err => {})
 	}, []);
