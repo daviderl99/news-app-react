@@ -44,7 +44,7 @@ const ViewNews = () => {
       }
       {newsData.map((news, id) => (
         <div key={id}>
-          <Link to={`/edit/${id+1}`} className="card m-3">
+          <Link to={`/news/${id+1}`} className="card m-3">
             <div className="card-body">
               <h3 className="card-title">{news.title}</h3>
               <h5 className="card-subtitle mb-2 text-muted">{news.date}</h5>

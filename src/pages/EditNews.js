@@ -14,13 +14,13 @@ const EditNews = () => {
   useEffect(() => {
 		let data;
 
-		axios.get(`http://localhost:8000/edit/?id=${id}`)
+		axios.get(`http://localhost:8000/news/${id}`)
 		.then(res => {
 			data = res.data;
 			setNewsData(data);
 		})
 		.catch(err => {})
-	}, []);
+	}, [id]);
 
   const handleInput = (e) => {
     setNewsData({
