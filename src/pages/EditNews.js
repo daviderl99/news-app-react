@@ -14,7 +14,7 @@ const EditNews = () => {
   useEffect(() => {
 		let data;
 
-		axios.get(`http://localhost:8000/news/${id}`)
+		axios.get(`http://localhost:8000/news/${id}/`)
 		.then(res => {
 			data = res.data;
 			setNewsData(data);
