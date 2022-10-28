@@ -1,17 +1,20 @@
-import {Route, BrowserRouter, Routes} from 'react-router-dom';
+import { BrowserRouter, useRoutes } from 'react-router-dom';
 import ViewNews from './pages/ViewNews.js';
 import EditNews from './pages/EditNews.js';
 import './App.css';
 
-function App() {
+const AllRoutes = () => useRoutes([
+  { path: "/", element: <ViewNews /> },
+  { path: "/news", element: <ViewNews /> },
+  { path: "/news/:id", element: <EditNews /> }
+]);
+
+const App = () => {
   return (
     <BrowserRouter>
       <div className="App">
         <div className="content">
-          <Routes>
-            <Route path="/news" exact element={<ViewNews />} />
-            <Route path="/news/:id" exact element={<EditNews />} />
-          </Routes>
+          <AllRoutes />
         </div>
       </div>
     </BrowserRouter>
