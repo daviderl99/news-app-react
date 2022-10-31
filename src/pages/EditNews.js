@@ -31,13 +31,14 @@ const EditNews = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // axios.post("http://localhost:8000/edit/", {
-    //     title: newsData.title,
-    //     date: newsData.date,
-    //     lead: newsData.lead,
-    //     text: newsData.text,
-    //   })
-    //   .catch((err) => {});
+    axios.put(`http://localhost:8000/news/${id}/`, {
+        title: newsData.title,
+        date: newsData.date,
+        lead: newsData.lead,
+        text: newsData.text,
+      })
+      .then(() => alert("News updated"))
+      .catch((err) => {});
   }
 
   return (
